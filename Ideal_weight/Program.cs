@@ -17,25 +17,22 @@ namespace Ideal_weight
             );
             gender = int.Parse(Console.ReadLine());
 
-            if ((height < 0) & (gender != 1) & (gender != 2))
+            if (height < 0 && gender != 1 && gender != 2)
                 Console.WriteLine("The height can not be a negative number " +
                     "and you have to select a valid gender!"
                 );
 
+            else if (gender == 1)
+            {
+                weight = (height * 72.7) - 58;
+                Console.WriteLine("The ideal weight for you is {0}", weight);
+            }
             else
             {
-                if (gender == 1)
-                {
-                    weight = (height * 72.7) - 58;
-                    Console.WriteLine("The ideal weight for you is {0}", weight);
-                }
-                else
-                {
-                    weight = (height * 62.1) - 44.7;
-                    Console.WriteLine("The ideal weight for you is {0}", weight);
-                }
+                weight = (height * 62.1) - 44.7;
+                Console.WriteLine("The ideal weight for you is {0}", weight);
             }
-
+            
             Console.ReadKey();
         }
     }
